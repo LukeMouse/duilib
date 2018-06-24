@@ -147,8 +147,12 @@ namespace DuiLib
 	void CContainerUI::RemoveAll()
 	{
 		for( int it = 0; m_bAutoDestroy && it < m_items.GetSize(); it++ ) {
-			if( m_bDelayedDestroy && m_pManager ) m_pManager->AddDelayedCleanup(static_cast<CControlUI*>(m_items[it]));             
-			else static_cast<CControlUI*>(m_items[it])->Delete();
+            if (m_bDelayedDestroy && m_pManager) {
+                m_pManager->AddDelayedCleanup(static_cast<CControlUI*>(m_items[it]));
+            }
+            else {
+                static_cast<CControlUI*>(m_items[it])->Delete();
+            }
 		}
 		m_items.Empty();
 		NeedUpdate();

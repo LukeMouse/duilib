@@ -1,0 +1,38 @@
+project(DuiLibus):build_files{
+    sharedname=DuiLibus
+    pch_header = StdAfx.h
+    pch_source = StdAfx.cpp
+    dynamicflags=UILIB_EXPORTS
+
+    specific(prop:microsoft){
+        DisableSpecificWarnings+=4245;4100;4244;4189;4706;4482
+        unicode=1
+        libout=..\Unicode\$(PlatformName)\lib
+        dllout=..\Unicode\$(PlatformName)\bin
+        libpaths+=..\Unicode\$(PlatformName)\lib
+        warning_level=4
+        includes+=..\include
+        Debug::debug_format=1
+        Debug::runtime_library = 1
+        Release::runtime_library = 0
+    }
+
+    Header_Files{
+        *.h
+        Control\*.h
+        Core\*.h
+        Layout\*.h
+        Utils\*.h
+    }
+
+    Source_Files{
+        *.cpp
+        Control\*.cpp
+        Core\*.cpp
+        Layout\*.cpp
+        Utils\*.cpp
+        no_pch=1
+        Utils\XUnzip.cpp
+        Utils\*.c
+    }
+}

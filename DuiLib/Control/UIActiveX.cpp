@@ -556,13 +556,13 @@ STDMETHODIMP CActiveXCtrl::OnInPlaceActivateEx(BOOL* pfNoRedraw, DWORD dwFlags)
     if( m_pInPlaceObject != NULL ) {
         CDuiRect rcItem = m_pOwner->m_rcItem;
         if( !m_bWindowless ) rcItem.ResetOffset();
-        m_pInPlaceObject->SetObjectRects(&rcItem, &rcItem);
+        //m_pInPlaceObject->SetObjectRects(&rcItem, &rcItem);
     }
     m_bInPlaceActive = SUCCEEDED(Hr);
     return Hr;
 }
 
-STDMETHODIMP CActiveXCtrl::OnInPlaceDeactivateEx(BOOL fNoRedraw)       
+STDMETHODIMP CActiveXCtrl::OnInPlaceDeactivateEx(BOOL fNoRedraw)
 {
     DUITRACE(_T("AX: CActiveXCtrl::OnInPlaceDeactivateEx"));
     m_bInPlaceActive = false;
@@ -616,6 +616,12 @@ STDMETHODIMP CActiveXCtrl::GetWindowContext(IOleInPlaceFrame** ppFrame, IOleInPl
 		::GetClientRect(m_pWindow->GetHWND(),lprcPosRect);
 		::GetClientRect(m_pWindow->GetHWND(),lprcClipRect);
 	}
+    else
+    {
+        RECT rcItem = m_pOwner->GetPos();
+        memcpy(lprcPosRect, &rcItem, sizeof(rcItem));
+        memcpy(lprcClipRect, &rcItem, sizeof(rcItem));
+    }
     *ppFrame = new CActiveXFrameWnd(m_pOwner);
     *ppDoc = NULL;
     ACCEL ac = { 0 };
@@ -1131,7 +1137,7 @@ void CActiveXUI::ReleaseControl()
             pSite->SetSite(NULL);
             pSite->Release();
         }
-        m_pUnk->Close(OLECLOSE_NOSAVE);
+        //m_pUnk->Close(OLECLOSE_NOSAVE);
         m_pUnk->SetClientSite(NULL);
         m_pUnk->Release(); 
         m_pUnk = NULL;

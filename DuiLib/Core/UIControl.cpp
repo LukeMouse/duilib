@@ -56,7 +56,7 @@ CControlUI::~CControlUI()
 void CControlUI::Delete()
 {
     if (m_pManager) m_pManager->RemoveMouseLeaveNeeded(this);
-    delete this;
+    //delete this;
 }
 
 CDuiString CControlUI::GetName() const
@@ -856,6 +856,12 @@ void CControlUI::DoEvent(TEventUI& event)
             return;
         }
     }
+	// 增加双击支持
+	if( event.Type == UIEVENT_DBLCLICK )
+	{
+		m_pManager->SendNotify(this, DUI_MSGTYPE_DBCLICK, event.wParam, event.lParam);
+		// return;
+	}
     if( m_pParent != NULL ) m_pParent->DoEvent(event);
 }
 
