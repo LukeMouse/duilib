@@ -1,0 +1,24 @@
+project(TestActicveXCtrl):build_files,lukemfc,lukecvimageus{
+    sharedname=TestActicveXCtrl
+    pch_header = stdafx.h
+    pch_source = stdafx.cpp
+    macros += _CRT_SECURE_NO_WARNINGS
+    includes += ..\..\include
+    after+=DuiLibUs
+    libs+=DuiLibus
+    specific(prop:microsoft){
+        DisableSpecificWarnings+=4481;4100;4458;2065;2227
+        ModuleDefinitionFile=TestActicveXCtrl.def
+        activex=1
+        unicode=1
+        RegisterOutput=1
+        libout=..\..\Unicode\$(PlatformName)\lib
+        dllout=..\..\Unicode\$(PlatformName)\bin
+        libpaths+=..\..\Unicode\$(PlatformName)\lib
+        warning_level=4
+    }
+    //F:\UpSync\RuralMouseSVN\LMXLib\DuiLib\Unicode\Win32\bin\TstCon32.exe
+    Source_Files{
+        *.cpp
+    }
+}

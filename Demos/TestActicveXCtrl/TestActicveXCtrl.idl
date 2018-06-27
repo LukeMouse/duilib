@@ -1,0 +1,52 @@
+// TestActicveXCtrl.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (TestActicveXCtrl.tlb) that will become a resource in
+// TestActicveXCtrl.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(2ABD00E4-F012-43F4-8868-3B756A379DD0), version(1.0),
+  helpfile("TestActicveXCtrl.hlp"),
+  helpstring("TestActicveXCtrl ActiveX Control module"),
+  control ]
+library TestActicveXCtrlLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CTestActicveXCtrlCtrl
+
+	[ uuid(B38B780A-1291-400C-88B2-0048AB629F77),
+	  helpstring("Dispatch interface for TestActicveXCtrl Control")]
+	dispinterface _DTestActicveXCtrl
+	{
+		properties:
+		methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CTestActicveXCtrlCtrl
+
+	[ uuid(A4633AC6-1B7D-4B63-B8ED-1C6FB264BB74),
+	  helpstring("Event interface for TestActicveXCtrl Control") ]
+	dispinterface _DTestActicveXCtrlEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+	};
+
+	//  Class information for CTestActicveXCtrlCtrl
+
+	[ uuid(648573AD-951F-415F-8FBD-F41F7300CB99),
+	  helpstring("TestActicveXCtrl Control"), control ]
+	coclass TestActicveXCtrl
+	{
+		[default] dispinterface _DTestActicveXCtrl;
+		[default, source] dispinterface _DTestActicveXCtrlEvents;
+	};
+
+};

@@ -1,0 +1,7 @@
+workspace(DuiLib){
+	./DuiLib
+	./Demos/HelloDuiLib
+	./Demos/DuilibEmbedMFC
+	./Demos/TestActicveXCtrl
+	./Demos/DuiLibControl
+}

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="306,277">
+    <Font id="2" name="微软雅黑" size="13" bold="true" italic="false" />
+    <VerticalLayout name="shoePreview" width="306" height="277">
+        <HorizontalLayout width="306" height="16" bkcolor="#FFFFFFFF" />
+        <HorizontalLayout name="shoeContainer" width="306" height="220">
+            <VerticalLayout width="17" height="220" bkcolor="#FFFFFFFF" />
+            <VerticalLayout name="leftPart" width="128" height="220">
+                <HorizontalLayout name="leftLayout" width="128" height="188">
+                    <Button name="leftFoot" bordersize="1" float="true" pos="0,0,0,0" width="128" height="188" bordercolor="#00008080" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+                </HorizontalLayout>
+                <HorizontalLayout width="128" height="32" bkcolor="#FFF6F8F8">
+                    <Label text="左脚足迹" bordersize="1" float="true" pos="0,-1,0,0" width="128" height="33" bordercolor="#00A0A0A4" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+                </HorizontalLayout>
+            </VerticalLayout>
+            <VerticalLayout width="16" height="220" bkcolor="#FFFFFFFF" />
+            <VerticalLayout name="rightPart" width="128" height="220">
+                <HorizontalLayout name="rightLayout" width="128" height="188">
+                    <Button name="rightFoot" bordersize="1" float="true" pos="0,0,0,0" width="128" height="188" bordercolor="#00008080" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+                </HorizontalLayout>
+                <HorizontalLayout width="128" height="32" bkcolor="#FFF6F8F8">
+                    <Label text="右脚足迹" bordersize="1" float="true" pos="0,-1,0,0" width="128" height="33" bordercolor="#00A0A0A4" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+                </HorizontalLayout>
+            </VerticalLayout>
+            <VerticalLayout width="17" height="220" bkcolor="#FFFFFFFF" />
+        </HorizontalLayout>
+        <HorizontalLayout width="306" height="9" bkcolor="#FFFFFFFF" />
+        <HorizontalLayout width="306" height="32">
+            <Button name="btnDel" text=" 删除" float="true" pos="17,0,0,0" width="272" height="31" bkcolor="#00B9D1EF" bkcolor2="#00757676" maxheight="20" maxwidth="27" textcolor="#FFFFFFFF" disabledtextcolor="#FFC0C0C0" font="2" align="center" normalimage="file=&apos;删除按钮大.png&apos; source=&apos;0,0,272,32&apos;" hotimage="file=&apos;删除按钮大.png&apos; source=&apos;0,32,272,64&apos;" pushedimage="file=&apos;删除按钮大.png&apos; source=&apos;0,64,272,96&apos;" disabledimage="file=&apos;删除按钮大.png&apos; source=&apos;0,96,272,128&apos;" />
+        </HorizontalLayout>
+    </VerticalLayout>
+</Window>

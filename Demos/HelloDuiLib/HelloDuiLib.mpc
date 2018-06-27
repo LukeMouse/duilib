@@ -1,0 +1,13 @@
+project(HelloDuiLib):build_files,lukeduilibus,winapp,lukeexe,lukestatic{
+    exename=HelloDuiLib
+    pch_header = stdafx.h
+    pch_source = stdafx.cpp
+
+    specific(prop:microsoft){
+        DisableSpecificWarnings+=4481;4100;4458;4702
+        unicode=1
+        libout=..\..\Unicode\$(PlatformName)\lib
+        exeout=..\..\Unicode\$(PlatformName)\bin
+        warning_level=4
+    }
+}

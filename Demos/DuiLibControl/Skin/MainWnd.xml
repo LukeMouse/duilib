@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="1238,665" sizebox="4,4,4,4">
+    <Font id="1" name="微软雅黑" size="16" bold="true" italic="false" />
+    <Font id="3" name="微软雅黑" size="13" bold="true" italic="false" />
+    <HorizontalLayout width="1238" height="665">
+        <VerticalLayout width="932" height="665" bkcolor="#FFEDF1F2">
+            <HorizontalLayout width="916" height="40" bkcolor="#FFF7F8F8">
+                <Text text="足迹信息采集" float="true" pos="18,15,0,0" width="178" height="19" textpadding="2,0,2,0" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="1" align="wrap" />
+            </HorizontalLayout>
+            <HorizontalLayout width="916" height="16" bkcolor="#FFFFFFFF" />
+            <HorizontalLayout width="916" height="592" name="imageFresh">
+                <VerticalLayout width="16" height="592" bkcolor="#FFFFFFFF" />
+                <VerticalLayout name="showPos" width="884" height="592">
+                    <Label name="picShow" float="true" pos="0,0,0,0" width="884" height="592" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />					
+                    <Button name="btnCapture" text="  点击采集" float="true" pos="350,446,0,0" width="248" height="62" textcolor="#FFFFFFFF" font="1" bkcolor="#00B9D1EF" bkcolor2="#00757676" maxheight="20" maxwidth="27" normalimage="file='拍照按钮.png' source='0,0,192,48'" hotimage="file='拍照按钮.png' source='0,48,192,96'" pushedimage="file='拍照按钮.png' source='0,96,192,144'" disabledimage="file='拍照按钮.png' source='0,144,192,192'"  />
+                </VerticalLayout>
+                <VerticalLayout width="16" height="592" bkcolor="#FFFFFFFF" />
+            </HorizontalLayout>
+            <HorizontalLayout width="916" height="16" bkcolor="#FFFFFFFF" />
+        </VerticalLayout>
+        <VerticalLayout width="306" height="665">
+            <HorizontalLayout width="306" height="40" bkcolor="#FFF7F8F8">
+                <Text text="图像预览" float="true" pos="6,11,0,0" width="109" height="19" textpadding="2,0,2,0" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="1" align="wrap" />
+                <Button name="addBtn" text=" 新增" textcolor="#FFFFB936" disabledtextcolor="#FFC0C0C0" float="true" pos="232,9,0,0" width="56" height="24" bkcolor="#00B9D1EF" bkcolor2="#00757676" maxheight="20" maxwidth="27" normalimage="file='线框按钮.png' source='0,0,56,24'" hotimage="file='线框按钮.png' source='0,24,56,48'" pushedimage="file='线框按钮.png' source='0,48,56,72'" disabledimage="file='线框按钮.png' source='0,72,56,96'"  />
+            </HorizontalLayout>
+            <HorizontalLayout width="306" height="625" bkcolor="#FFFFFFFF">
+                <List name="shoeList" width="306" height="625" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" vscrollbar="true" hscrollbar="true">
+                    <ListHeader />
+                </List>
+            </HorizontalLayout>
+        </VerticalLayout>
+    </HorizontalLayout>
+</Window>

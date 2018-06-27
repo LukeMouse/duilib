@@ -1,0 +1,15 @@
+project(DuilibEmbedMFC) : lukemfcs,build_files,lukeexe,lukeduilibus,lukestatic{
+    exename=DuilibEmbedMFC
+    pch_header = stdafx.h
+    pch_source = stdafx.cpp
+
+    specific(prop:microsoft){
+        DisableSpecificWarnings+=4481;4100
+        warning_level=4
+        unicode=1
+        libout=..\..\Unicode\$(PlatformName)\lib
+        exeout=..\..\Unicode\$(PlatformName)\bin
+    }
+}
+
+ 

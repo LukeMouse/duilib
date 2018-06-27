@@ -1,9 +1,9 @@
-project(DuiLibus):build_files{
+project(DuiLibus):build_files,lukestatic{
     sharedname=DuiLibus
     pch_header = StdAfx.h
     pch_source = StdAfx.cpp
     dynamicflags=UILIB_EXPORTS
-
+    includes+=../include
     specific(prop:microsoft){
         DisableSpecificWarnings+=4245;4100;4244;4189;4706;4482
         unicode=1
@@ -11,10 +11,6 @@ project(DuiLibus):build_files{
         dllout=..\Unicode\$(PlatformName)\bin
         libpaths+=..\Unicode\$(PlatformName)\lib
         warning_level=4
-        includes+=..\include
-        Debug::debug_format=1
-        Debug::runtime_library = 1
-        Release::runtime_library = 0
     }
 
     Header_Files{

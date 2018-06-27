@@ -1,0 +1,9 @@
+; TestActicveXCtrl.def : Declares the module parameters.
+
+LIBRARY      "TestActicveXCtrl.OCX"
+
+EXPORTS
+	DllCanUnloadNow     PRIVATE
+	DllGetClassObject   PRIVATE
+	DllRegisterServer   PRIVATE
+	DllUnregisterServer PRIVATE

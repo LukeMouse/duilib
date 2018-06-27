@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="410,660">
+    <VerticalLayout width="410" height="660">
+        <HorizontalLayout width="410" height="30" bkcolor="#FFF0F0F0">
+            <Button name="btnClose" float="true" pos="365,6,0,0" width="41" height="18" bkcolor="#FFB9D1EF" bkcolor2="#FF757676" bordercolor="#FF000000" maxheight="20" maxwidth="41" normalimage="file='common.bmp' source='0,0,39,17'" hotimage="file='common.bmp' source='39,0,78,17'" pushedimage="file='common.bmp' source='78,0,117,17'" />
+        </HorizontalLayout>
+        <HorizontalLayout width="410" height="600" bkcolor="#FFF0F0F0">
+            <VerticalLayout width="30" height="600" bkcolor="#FFF0F0F0" />
+            <VerticalLayout width="350" height="600" bkcolor="#FFF0F0F0">
+                <ActiveX name="ocxShoe" width="350" height="600" clsid="{9C90626A-5A09-4DF0-AB03-B9CCE82C4AC3}" />
+            </VerticalLayout>
+            <VerticalLayout width="30" height="600" bkcolor="#FFF0F0F0" />
+        </HorizontalLayout>
+        <HorizontalLayout width="410" height="30" bkcolor="#FFF0F0F0">
+            <Button name="btnSnap" text="采集" float="true" pos="140,4,0,0" width="60" height="24" bkcolor="#FFB9D1EF" textcolor="#FFFFFFFF" bkcolor2="#FF757676" bordercolor="#FF000000" maxheight="20" maxwidth="41" normalimage="file='button.bmp' source='0,0,66,22'" hotimage="file='button.bmp' source='0,22,66,44'" pushedimage="file='button.bmp' source='0,44,66,66'" />
+			<Button name="btnOK" text="完成" float="true" pos="210,4,0,0" width="60" height="24" bkcolor="#FFB9D1EF" textcolor="#FFFFFFFF" bkcolor2="#FF757676" bordercolor="#FF000000" maxheight="20" maxwidth="41" normalimage="file='button.bmp' source='0,0,66,22'" hotimage="file='button.bmp' source='0,22,66,44'" pushedimage="file='button.bmp' source='0,44,66,66'" />
+        </HorizontalLayout>
+    </VerticalLayout>
+</Window>
