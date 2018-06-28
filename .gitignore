@@ -34,3 +34,7 @@ Debug/
 .vs/
 *.opendb
 ipch/
+*.sln
+*.vcproj
+*.vcxproj
+*.filters

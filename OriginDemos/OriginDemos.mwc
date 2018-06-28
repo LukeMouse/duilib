@@ -1,0 +1,3 @@
+workspace(OriginDemos.mwc){
+    ./360SafeDemo
+}
