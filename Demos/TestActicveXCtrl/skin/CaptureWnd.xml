@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="410,660" caption="0,0,0,-1" sizebox="0,4,0,4">
+    <VerticalLayout >
+        <HorizontalLayout height="30" bkcolor="#FFF0F0F0">
+            <Button name="btnClose" float="true" pos="365,6,0,0" width="41" height="18" bkcolor="#FFB9D1EF" bkcolor2="#FF757676" bordercolor="#FF000000" maxheight="20" maxwidth="41" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;common.bmp&apos; source=&apos;0,0,39,17&apos;" hotimage="file=&apos;common.bmp&apos; source=&apos;39,0,78,17&apos;" pushedimage="file=&apos;common.bmp&apos; source=&apos;78,0,117,17&apos;" />
+        </HorizontalLayout>
+        <HorizontalLayout bkcolor="#FFF0F0F0">
+            <VerticalLayout width="30" bkcolor="#FFF0F0F0" />
+            <VerticalLayout bkcolor="#FFF0F0F0" >
+                <ActiveX name="ocxShoe" clsid="{9C90626A-5A09-4DF0-AB03-B9CCE82C4AC3}" />
+            </VerticalLayout>
+            <VerticalLayout width="30" bkcolor="#FFF0F0F0" />
+        </HorizontalLayout>
+        <HorizontalLayout height="30" bkcolor="#FFF0F0F0">
+            <Button name="btnSnap" text="采集" float="true" pos="175,4,0,0" width="60" height="24" bkcolor="#FFB9D1EF" bkcolor2="#FF757676" bordercolor="#FF000000" maxheight="20" maxwidth="41" textcolor="#FFFFFFFF" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;button.bmp&apos; source=&apos;0,0,66,22&apos;" hotimage="file=&apos;button.bmp&apos; source=&apos;0,22,66,44&apos;" pushedimage="file=&apos;button.bmp&apos; source=&apos;0,44,66,66&apos;" />
+        </HorizontalLayout>
+    </VerticalLayout>
+</Window>

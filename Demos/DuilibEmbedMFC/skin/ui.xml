@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="574,369" caption="0,0,0,36" roundcorner="9,9" >
+	<VerticalLayout name="bg"  inset="4,0,4,4" bkimage="file='tishi_bg.png' corner='4,48,4,4' " >
+		<HorizontalLayout height="32" inset="2,2,0,0">
+			<Label  width="150" />
+			<Control />
+			<Button name="minbtn" width="42" maxheight="18" tooltip="最小化" normalimage="file='xiaohua.png' mask='#FFFF00FF'" hotimage="file='xiaohua_pressed.png' mask='#FFFF00FF'" pushedimage="file='xiaohua_pressed.png' mask='#FFFF00FF'"/>
+			<Button name="closebtn" width="42" maxheight="18" tooltip="关闭" normalimage="file='guanbi.png' mask='#FFFF00FF'" hotimage="file='guanbi_pressed.png' mask='#FFFF00FF'" pushedimage="file='guanbi_pressed.png' mask='#FFFF00FF'"/>
+		</HorizontalLayout>
+		<Container>
+			<Label name="warning" visible="false" float="true" bkimage="file='jingshi.png'"  pos="100, 40, 166, 93" />
+			<Text name="content" float="true" text="" showhtml="true" pos="250, 105, 466, 180" />
+			<RichEdit name="introduce" float="true" text="" pos="240, 140, 450, 208" inset="4,2,4,2"   multiline="true" vscrollbar="true" autovscroll="true" enabled="true" rich="true" readonly="true" />
+			<Progress name="pg" height="10" visible="false" float="true" bkimage="file='jindu_dikuang.png'"  pos="60, 60, 514, 70" />
+			<Button name="retrybtn" visible="false" float="true" pos="480, 80, 546, 108" normalimage="file='chongshi.png' mask='#FFFF00FF'" hotimage="file='chongshi_pressed.png' mask='#FFFF00FF'" pushedimage="file='chongshi_pressed.png' mask='#FFFF00FF'"/>
+			<Label name="curver1"  float="true"  pos="15, 295, 152, 328" />
+			<Label name="newver1"  float="true"  pos="200, 295, 352, 328" />
+			<Button name="updatebtn"  float="true" pos="330, 295, 423, 323" normalimage="file='tishi_shengji.png' mask='#FFFF00FF'" hotimage="file='tishi_shengji_pressed.png' mask='#FFFF00FF'" pushedimage="file='tishi_shengji_pressed.png' mask='#FFFF00FF'"/>
+			<Button name="cancelbtn"  float="true" pos="450, 295, 516, 323" normalimage="file='tishi_quxiao.png' mask='#FFFF00FF'" hotimage="file='tishi_quxiao_pressed.png' mask='#FFFF00FF'" pushedimage="file='tishi_quxiao_pressed.png' mask='#FFFF00FF'"/>
+			<Button name="okbtn" visible="false" float="true" pos="330, 250, 427, 278" normalimage="file='chongqi.png' mask='#FFFF00FF'" hotimage="file='chongqi_pressed.png' mask='#FFFF00FF'" pushedimage="file='chongqi_pressed.png' mask='#FFFF00FF'"/>
+			<Button name="gengxinbtn" visible="false" float="true" pos="300, 250, 397, 278" normalimage="file='gengxin.png' mask='#FFFF00FF'" hotimage="file='gengxin_pressed.png' mask='#FFFF00FF'" pushedimage="file='gengxin_pressed.png' mask='#FFFF00FF'"/>
+		</Container>
+    </VerticalLayout>
+</Window>
