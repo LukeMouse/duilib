@@ -1,0 +1,11 @@
+project(MenuDemo):build_files,OriginDemo,lukeexe,winapp{
+    exename=MenuDemo
+    Source_Files{
+        debug.cpp
+        main_frame.cpp
+        UICrack.cpp
+        UIMenu.cpp
+        main.cpp
+    }
+}
+

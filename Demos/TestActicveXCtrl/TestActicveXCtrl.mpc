@@ -1,7 +1,5 @@
-project(TestActicveXCtrl):build_files,lukemfc,lukecvimageus{
+project(TestActicveXCtrl):build_files,lukemfc,lukecvimageu,lukepch{
     sharedname=TestActicveXCtrl
-    pch_header = stdafx.h
-    pch_source = stdafx.cpp
     macros += _CRT_SECURE_NO_WARNINGS
     includes += ..\..\include
     after+=DuiLibUs
@@ -17,8 +15,9 @@ project(TestActicveXCtrl):build_files,lukemfc,lukecvimageus{
         libpaths+=..\..\Unicode\$(PlatformName)\lib
         warning_level=4
     }
-    //F:\UpSync\RuralMouseSVN\LMXLib\DuiLib\Unicode\Win32\bin\TstCon32.exe
+    //D:\LukeGitHub\duilib\Unicode\Win32\bin\TstCon32.exe
     Source_Files{
         *.cpp
+        *.idl
     }
 }

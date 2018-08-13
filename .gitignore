@@ -30,6 +30,7 @@ QQDemo/Debug/mt.dep
 *.map
 Unicode/
 Debug/
+Release/
 *.db
 .vs/
 *.opendb

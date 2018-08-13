@@ -11,7 +11,7 @@
 #include <objbase.h>
 #include <zmouse.h>
 
-#include "..\DuiLib\UIlib.h"
+#include <UIlib.h>
 
 using namespace DuiLib;
 

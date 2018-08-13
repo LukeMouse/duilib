@@ -1,0 +1,4 @@
+project(ListDemo):build_files,lukestatic,OriginDemo,lukeexe,winapp{
+	exename=ListDemo
+}
+

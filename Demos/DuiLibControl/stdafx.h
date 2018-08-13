@@ -9,7 +9,7 @@
 
 #define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
 // Windows Header Files:
-#include <windows.h>
+//#include <windows.h>
 
 // C RunTime Header Files
 #include <stdlib.h>
@@ -18,7 +18,9 @@
 #include <map>
 #include <tchar.h>
 
+#include <afxwin.h>
 #include <UIlib.h>
+using namespace DuiLib;
 
 #include <ximage.h>
 // TODO: reference additional headers your program requires here

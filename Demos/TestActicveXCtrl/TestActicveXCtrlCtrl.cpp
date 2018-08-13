@@ -116,7 +116,7 @@ BOOL CTestActicveXCtrlCtrl::CTestActicveXCtrlCtrlFactory::UpdateRegistry(BOOL bR
 
 // CTestActicveXCtrlCtrl::CTestActicveXCtrlCtrl - Constructor
 
-CTestActicveXCtrlCtrl::CTestActicveXCtrlCtrl(): m_dlgDuilib(NULL)
+CTestActicveXCtrlCtrl::CTestActicveXCtrlCtrl(): m_udiFrameWnd(NULL)
 {
 	InitializeIIDs(&IID_DTestActicveXCtrl, &IID_DTestActicveXCtrlEvents);
 	// TODO: Initialize your control's instance data here.
@@ -129,10 +129,10 @@ CTestActicveXCtrlCtrl::CTestActicveXCtrlCtrl(): m_dlgDuilib(NULL)
 CTestActicveXCtrlCtrl::~CTestActicveXCtrlCtrl()
 {
 	// TODO: Cleanup your control's instance data here.
-    if (NULL != m_dlgDuilib)
+    if (NULL != m_udiFrameWnd)
     {
-        delete m_dlgDuilib;
-        m_dlgDuilib = NULL;
+        delete m_udiFrameWnd;
+        m_udiFrameWnd = NULL;
     }
 }
 
@@ -227,18 +227,17 @@ int CTestActicveXCtrlCtrl::OnCreate(LPCREATESTRUCT lpCreateStruct)
     if (COleControl::OnCreate(lpCreateStruct) == -1)
         return -1;
 
-    //DuiLib::CPaintManagerUI::SetInstance(AfxGetInstanceHandle());//加载XML的时候，需要使用该句柄去定位EXE的路径，才能加载XML的路径
-    //DuiLib::CPaintManagerUI::SetResourcePath(DuiLib::CPaintManagerUI::GetInstancePath() + _T("skin"));//定位图片等资源的位置
-    //DuiLib::CPaintManagerUI::SetResourcePath(_T("F:\\UpSync\\RuralMouseSVN\\LMXLib\\DuiLib\\Unicode\\Win32\\bin\\skin\\"));//定位图片等资源的位置
-	if (NULL == m_dlgDuilib)
-	{
-		m_dlgDuilib = new CDuiFrameWnd();
-		m_dlgDuilib->Create(this->m_hWnd, NULL, UI_WNDSTYLE_CHILD & (~(WS_BORDER | WS_CAPTION)), 0, 0, 0, 0);
-		m_dlgDuilib->AddItem(1);
-	}
-	SIZE wndSize = m_dlgDuilib->GetInitSize();
-    m_dlgDuilib->GetControlPos();
-	MoveWindow(0, 0, wndSize.cx, wndSize.cy);
+    if (NULL == m_udiFrameWnd)
+    {
+        DuiLib::CPaintManagerUI::SetInstance(AfxGetInstanceHandle());
+        CString strResPath = DuiLib::CPaintManagerUI::GetInstancePath() + _T("\\skin");
+        DuiLib::CPaintManagerUI::SetResourcePath(strResPath.GetString());
+        m_udiFrameWnd = new CDuiFrameWnd();
+        m_udiFrameWnd->Create(this->m_hWnd, NULL, UI_WNDSTYLE_CHILD & (~(WS_BORDER | WS_CAPTION)), 0, 0, 0, 0);
+        m_udiFrameWnd->AddItem(1);
+    }
+    SIZE wndSize = m_udiFrameWnd->GetInitSize();
+    MoveWindow(0, 0, wndSize.cx, wndSize.cy);
 
     return 0;
 }
@@ -247,9 +246,10 @@ void CTestActicveXCtrlCtrl::OnSize(UINT nType, int cx, int cy)
 {
     COleControl::OnSize(nType, cx, cy);
     
-    if (NULL != m_dlgDuilib)
+    if (NULL != m_udiFrameWnd)
     {
-        m_dlgDuilib->ResizeClient(cx, cy);
-        m_dlgDuilib->ShowWindow(TRUE); //显示窗体
+        m_udiFrameWnd->ResizeClient(cx, cy);
+        m_udiFrameWnd->ResetButtonPosition();
+        m_udiFrameWnd->ShowWindow(TRUE); //显示窗体
     }
 }

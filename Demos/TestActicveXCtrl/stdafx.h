@@ -33,25 +33,20 @@
 #include <afxdao.h>                     // MFC DAO database classes
 #endif // _AFX_NO_DAO_SUPPORT
 
+
 #endif // _WIN64
 #include <afxwin.h>
+#include <map>
 
 #include <UIlib.h>
 //using namespace DuiLib;
 
 #include <ximage.h>
 
+#include "UtilDataStruct.h"
 #include "CaputureWnd.h"
 #include "DuiFrameWnd.h"
 
-RECT GetImagePos(RECT rcWnd,
-	const int imageWidth,
-	const int imageHeight,
-	const BOOL bCenter,
-	const BOOL bStretch);
-
-//将CxImage转为位图
-HBITMAP ChangeCxImageToBMP(HDC hDC, CxImage* cximage);
 
 #include "EasySize.h"
 #include "TestActicveXCtrl.h"

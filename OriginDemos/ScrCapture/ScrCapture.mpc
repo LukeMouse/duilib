@@ -1,0 +1,4 @@
+project(ScrCapture):build_files,lukestatic,OriginDemo,lukepch,lukeexe,winapp{
+	exename=ScrCapture
+}
+

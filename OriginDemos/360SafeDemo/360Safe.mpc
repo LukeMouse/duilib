@@ -1,0 +1,4 @@
+project(360Safe):build_files,lukestatic,OriginDemo,lukepch,lukeexe,winapp{
+	exename=360Safe
+}
+

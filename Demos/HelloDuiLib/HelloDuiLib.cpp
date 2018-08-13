@@ -3,15 +3,14 @@
 
 #include "stdafx.h"
 #include "HelloDuiLib.h"
-#include <UIlib.h>
-using namespace DuiLib;
+
 
 
 #define MAX_LOADSTRING 100
 
 
 
-class CDuiFrameWnd : public CWindowWnd, public INotifyUI
+class CDuiFrameWnd : public DuiLib ::CWindowWnd, public DuiLib ::INotifyUI
 {
 public:
     virtual LPCTSTR GetWindowClassName() const { return _T("DUIMainFrame"); }

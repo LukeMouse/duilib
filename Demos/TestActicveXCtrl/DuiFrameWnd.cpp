@@ -1,8 +1,10 @@
 #include "stdafx.h"
 #include "DuiFrameWnd.h"
+#include "TestActicveXCtrl.h"
 
 CDuiFrameWnd::CDuiFrameWnd()
     : m_pSelect(NULL), m_dwMaxTag(0)
+    , m_curStatus(0), m_pShowPos(NULL)
 {
 }
 
@@ -19,35 +21,49 @@ void CDuiFrameWnd::InitWindow()
     m_pAddNew = static_cast<DuiLib::CButtonUI*>(m_PaintManager.FindControl(_T("addBtn")));
     m_pAddNew->SetEnabled(false);
     m_pCapture = static_cast<DuiLib::CButtonUI*>(m_PaintManager.FindControl(_T("btnCapture")));
-    //m_pCapture->SetVisible(false);
+    m_pCapture->SetVisible(false);
 	m_pCantainer = static_cast<DuiLib::CContainerUI*>(m_PaintManager.FindControl(_T("imageFresh")));
 
  }
 
-void CDuiFrameWnd::setShoeImageBase64(const CStringA& strFootImage)
+void CDuiFrameWnd::setShoeImageBase64(std::string strFootImage)
 {
     unsigned char* data = 0;
     int dataLength = 0;
 
-
+    //if (strFootImage.size() > 0)
+    //{
+    //    //base64解码
+    //    if (HS_BASE64_DecodeEx((char*)strFootImage.c_str(), strFootImage.size(), &data, &dataLength, 0) < 0)
+    //    {
+    //        AfxMessageBox(theApp.GetStringFromResource(IDS_PARSE64FAILED));
+    //        return;
+    //    }
+    //}
+    
     CxImage imgHelper(data, dataLength,0);
     int imgWidth = imgHelper.GetWidth();
     int imgHeight = imgHelper.GetHeight();
     RECT windowRect = m_pSelect->GetParent()->GetPos();
     RECT destPos = GetImagePos(windowRect, imgWidth, imgHeight, TRUE, TRUE);
 
-    DuiLib::CDuiString sCtrlKey = _T("LukeImagePos");
+    static int seeds = 1;
+    TCHAR imgKey[20] = {};
+    _stprintf_s(imgKey, 20, _T("ImageIndex%d"), seeds++);
     HBITMAP hBmp = ChangeCxImageToBMP(GetDC(GetHWND()), &imgHelper);
-    m_PaintManager.RemoveImage(sCtrlKey);
-    m_PaintManager.AddImage(sCtrlKey, hBmp, imgWidth, imgHeight, false);
+    m_PaintManager.AddImage(imgKey, hBmp, imgWidth, imgHeight, false);
     m_pSelect->SetPos(destPos);
-    m_pSelect->SetBkImage(sCtrlKey);
+    m_pSelect->SetBkImage(imgKey);
+
+    windowRect = m_pShowPos->GetPos();
+    destPos = GetImagePos(windowRect, imgWidth, imgHeight, TRUE, TRUE);
+    m_pLabel->SetPos(destPos);
+    m_pLabel->SetBkImage(imgKey);
 }
 
 void CDuiFrameWnd::Notify(DuiLib::TNotifyUI& msg)
 {
     static int item = 1;
-    static bool isFirst = true;
     if (msg.sType == _T("click"))
     {
         DuiLib::CDuiString name = msg.pSender->GetName();
@@ -70,35 +86,52 @@ void CDuiFrameWnd::Notify(DuiLib::TNotifyUI& msg)
                 return;
             }
 
-            CoInitialize(NULL);
+            m_pCapture->SetVisible(false);
             CCaputureWnd * pCapWnd = NULL;
-            pCapWnd = new CCaputureWnd(0, this);
-            pCapWnd->Create(this->m_hWnd, _T("eeee"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE); ///< 如果参数1是NULL, 为桌面, 子窗口就不是模态对话框  
-            pCapWnd->CenterWindow();
+            pCapWnd = new CCaputureWnd(m_bLeftShoe ? 0 : 1, this);
+            pCapWnd->Create(this->m_hWnd, NULL, UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
+            //pCapWnd->Create(this->m_hWnd, _T("eeee"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE); ///< 如果参数1是NULL, 为桌面, 子窗口就不是模态对话框 
+            
+            //pCapWnd->CenterWindow(); 原有的居中不好用，使用下面的5行代码解决
+            RECT rcParent = { 0 };
+            ::GetWindowRect(m_hWnd, &rcParent);
+            RECT rcCap = { 0 };
+            ::GetWindowRect(pCapWnd->GetHWND(), &rcCap);
+            MoveWindow(pCapWnd->GetHWND(), rcParent.left + 414, rcParent.top + 2, rcCap.right - rcCap.left, rcCap.bottom - rcCap.top, true);
+            
             pCapWnd->ShowWindow();
             pCapWnd->ShowModal();  ///< 弹出的是模态窗口
-            
-            setShoeImageBase64(m_tmpShoeImage.c_str());
-
-            //m_pCapture->SetVisible(false);
-            //m_pOcxShoe->SetVisible();
-            m_pCantainer->Invalidate();
-
-            CxImage imgHelper;
-            imgHelper.Load(_T("E:\\Backup\\李莫轩.JPG"));
-            int imgWidth = imgHelper.GetWidth();
-            int imgHeight = imgHelper.GetHeight();
-            RECT windowRect = m_pSelect->GetParent()->GetPos();
-            RECT destPos = GetImagePos(windowRect, imgWidth, imgHeight, TRUE, TRUE);
-
-            DuiLib::CDuiString sCtrlKey = _T("LukeImagePos");
-            HBITMAP hBmp = ChangeCxImageToBMP(GetDC(GetHWND()), &imgHelper);
-            m_PaintManager.RemoveImage(sCtrlKey);
-            m_PaintManager.AddImage(sCtrlKey, hBmp, imgWidth, imgHeight, false);
-            m_pSelect->SetPos(destPos);
-            m_pSelect->SetBkImage(sCtrlKey);
-
-
+            pCapWnd = NULL;
+            if (m_tmpShoeImage.size() > 50)
+            {
+                setShoeImageBase64(m_tmpShoeImage);
+                if (m_bLeftShoe)
+                {
+                    if(m_curStatus < 9)
+                    {
+                        m_curStatus += 10;
+                    }
+                    m_transDates[m_dwMaxTag].leftBase64 = m_tmpShoeImage;
+                }
+                else
+                {
+                    if (m_curStatus % 10 == 0)
+                    {
+                        m_curStatus += 1;
+                    }
+                    m_transDates[m_dwMaxTag].rightBase64 = m_tmpShoeImage;
+                }
+                m_tmpShoeImage.clear();
+                if (11 == m_curStatus)
+                {
+                    m_pAddNew->SetEnabled();
+                    m_curStatus = 0;
+                }
+            }
+			else
+			{
+				m_pCapture->SetVisible(true);
+			}
         }
 
         if (name == _T("btnDel"))
@@ -121,8 +154,31 @@ void CDuiFrameWnd::Notify(DuiLib::TNotifyUI& msg)
                         break;
                     }
                 }
+                m_transDates.erase(tag);
             }
         }
+    }
+}
+
+void CDuiFrameWnd::ResetButtonPosition()
+{
+    if (NULL == m_pShowPos)
+    {
+        return;
+    }
+    RECT rcCantainer = m_pShowPos->GetPos();
+    int width = m_pShowPos->GetWidth();
+    int height = m_pShowPos->GetHeight();
+    if (width > 0 && height > 0 && m_pCapture->IsVisible())
+    {
+        RECT rcButton;
+        rcButton.left = rcCantainer.left + static_cast<int>(0.36 * width);
+        rcButton.right = rcButton.left + static_cast<int>(0.28 * width);
+        rcButton.top = rcCantainer.top + static_cast<int>(0.75 * height);
+        rcButton.bottom = rcButton.top + static_cast<int>(0.1 * height);
+        m_pCapture->SetPos(rcButton);
+        InvalidateRect(m_hWnd, &rcCantainer, TRUE);
+        UpdateWindow(m_hWnd);
     }
 }
 
@@ -140,7 +196,7 @@ void CDuiFrameWnd::ChooseFootToSnap(const DuiLib::TNotifyUI &msg, const DuiLib::
             DuiLib::CControlUI * pSelect = pManager->FindControl(strName);
             if (NULL == m_pSelect)
             {
-                m_dwCorlorBackup = 0xFFE9E7E1;// pSelect->GetBorderColor();
+                m_dwCorlorBackup = pSelect->GetBorderColor();
             }
             else
             {
@@ -148,9 +204,9 @@ void CDuiFrameWnd::ChooseFootToSnap(const DuiLib::TNotifyUI &msg, const DuiLib::
             }
             pSelect->SetBorderColor(0xFFFF0000);
             m_pSelect = pSelect;
-            m_bLeftShoe = (strName.Find(_T("left")) > 0);
-
+            m_bLeftShoe = (strName == _T("leftFoot"));
             m_pCapture->SetVisible();
+            ResetButtonPosition();
         }
         pControl = pControl->GetParent();
     }
@@ -158,7 +214,13 @@ void CDuiFrameWnd::ChooseFootToSnap(const DuiLib::TNotifyUI &msg, const DuiLib::
 
 void CDuiFrameWnd::SetTmpShoeImage(const std::string& imageData)
 {
+    m_tmpShoeImage.clear();
     m_tmpShoeImage = imageData;
+}
+
+std::map<int, TransData> CDuiFrameWnd::GetSnapData()
+{
+    return m_transDates;
 }
 
 void CDuiFrameWnd::AddItem(int Line)
@@ -170,9 +232,9 @@ void CDuiFrameWnd::AddItem(int Line)
     }
     DuiLib::CDialogBuilder builder;
     DuiLib::CVerticalLayoutUI * pItem = static_cast<DuiLib::CVerticalLayoutUI *>(builder.Create(
-        _T("./preView.xml"), 0, NULL, &m_PaintManager, NULL));
+        _T("./capSnail.xml"), 0, NULL, &m_PaintManager, NULL));
     pItem->SetTag(Line);
-    m_dwMaxTag = Line;   
+    m_dwMaxTag = Line;
 
     m_pListShoes->AddAt(pItem, 0);
 }
@@ -186,9 +248,3 @@ SIZE CDuiFrameWnd::GetInitSize()
 {
     return m_PaintManager.GetInitSize();
 }
-
-void CDuiFrameWnd::GetControlPos()
-{
-
-}
-

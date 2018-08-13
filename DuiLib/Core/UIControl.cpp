@@ -338,7 +338,7 @@ void CControlUI::SetPos(RECT rc, bool bNeedInvalidate)
         m_bSetPos = false;
     }
     
-    m_bUpdateNeeded = false;
+    m_bUpdateNeeded = true;
 
 	if( bNeedInvalidate && IsVisible() ) {
 		invalidateRc.Join(m_rcItem);

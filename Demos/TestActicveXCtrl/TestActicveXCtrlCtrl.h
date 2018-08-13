@@ -53,7 +53,7 @@ public:
 
 
 private:
-    CDuiFrameWnd *  m_dlgDuilib;
+    CDuiFrameWnd *  m_udiFrameWnd;
 public:
     afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
     afx_msg void OnSize(UINT nType, int cx, int cy);

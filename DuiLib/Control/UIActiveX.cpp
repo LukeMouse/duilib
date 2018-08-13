@@ -1012,7 +1012,8 @@ void CActiveXUI::SetPos(RECT rc, bool bNeedInvalidate)
     }
     if( !m_pControl->m_bWindowless ) {
         ASSERT(m_pControl->m_pWindow);
-        ::MoveWindow(*m_pControl->m_pWindow, m_rcItem.left, m_rcItem.top, m_rcItem.right - m_rcItem.left, m_rcItem.bottom - m_rcItem.top, TRUE);
+        ::MoveWindow(*m_pControl->m_pWindow, m_rcItem.left, m_rcItem.top,
+            m_rcItem.right - m_rcItem.left, m_rcItem.bottom - m_rcItem.top, TRUE);
     }
 }
 

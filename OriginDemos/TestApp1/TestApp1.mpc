@@ -1,0 +1,4 @@
+project(TestApp1):build_files,lukestatic,OriginDemo,lukepch,lukeexe,winapp{
+	exename=TestApp1
+}
+

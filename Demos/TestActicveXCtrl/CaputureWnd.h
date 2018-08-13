@@ -1,7 +1,6 @@
 #pragma once
 
-//#include "capture.tlh"
-#import "F:\FingerPrint\一体化采集设备\足迹\恒锐\20180511\2.0版本驱动\ocx_new_20170505\Capture.ocx"
+#import "Capture.ocx"
 class CDuiFrameWnd;
 
 class CCaputureWnd:public DuiLib::CWindowWnd, public DuiLib::INotifyUI, public DuiLib::IMessageFilterUI
@@ -39,15 +38,20 @@ public:
 
     LRESULT MessageHandler(UINT uMsg, WPARAM wParam, LPARAM lParam, bool& bHandled);
 
-    DuiLib::CDuiString GetShoeImage();
+    BOOL IsInStaticControl(DuiLib::CControlUI *pControl);
+
+    BOOL IsDragRect(POINT pt);
+
+
 
 public:
     DuiLib::CPaintManagerUI m_pm;
-    DuiLib::CButtonUI* m_pButton;
+    DuiLib::CButtonUI* m_pBtnClose;
+    DuiLib::CButtonUI* m_pBtnSnap;
     DuiLib::CActiveXUI * m_pActiveX;
     CaptureLib::_DCapture *m_hrCaptureCtrl;
-    bstr_t m_showImage;
     short m_foorDirect;
     CDuiFrameWnd* m_pParent;
-
+    bool m_bStartMove;
+    POINT m_StartPt;
 };

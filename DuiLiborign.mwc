@@ -1,0 +1,13 @@
+workspace(DuiLibOrigin){
+	./DuiLib
+	./OriginDemos/360SafeDemo
+//	./OriginDemos/FileTree
+	./OriginDemos/FlashDemo
+	./OriginDemos/GameDemo
+	./OriginDemos/ListDemo
+	./OriginDemos/MenuDemo
+	./OriginDemos/QQDemo
+	./OriginDemos/RichListDemo
+	./OriginDemos/ScrCapture
+	./OriginDemos/TestApp1
+}

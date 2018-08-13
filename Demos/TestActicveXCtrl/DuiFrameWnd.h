@@ -1,6 +1,7 @@
 #pragma once
 
 
+
 class CDuiFrameWnd :
     public DuiLib::WindowImplBase
 {
@@ -10,12 +11,14 @@ public:
 
 public:
     virtual LPCTSTR    GetWindowClassName() const { return _T("DUIMainFrame"); }
-    virtual DuiLib::CDuiString GetSkinFile() { return _T("shoe.xml"); }
+    virtual DuiLib::CDuiString GetSkinFile() { return _T("MainWnd.xml"); }
     virtual DuiLib::CDuiString GetSkinFolder() { return _T(""); }
     virtual void InitWindow();
     virtual void Notify(DuiLib::TNotifyUI& msg);
 
-    void setShoeImageBase64(const CStringA& strFootImage);
+    void ResetButtonPosition();
+
+    void setShoeImageBase64(std::string strFootImage);
 
     void AddItem(int Line);
     void SetShoeDeviceType(int shoesDeviceType);
@@ -25,6 +28,8 @@ public:
 
     /// 回传采集到的图像
     void SetTmpShoeImage(const std::string& imageData);
+
+    std::map<int, TransData> GetSnapData();
 
     std::string m_tmpShoeImage;
     void GetControlPos();
@@ -46,5 +51,9 @@ public:
     bool m_bLeftShoe;
     /// 采集设备类型
     int m_nShoesDeviceType;
+    /// 0 双脚均未采集，10 左脚采集完成， 11双脚采集完成
+    int m_curStatus;
+
+    std::map<int, TransData> m_transDates;
 };
 

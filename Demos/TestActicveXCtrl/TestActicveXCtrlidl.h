@@ -3,13 +3,13 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.00.0603 */
-/* at Wed Jun 27 09:04:30 2018
+ /* File created by MIDL compiler version 7.00.0555 */
+/* at Mon Aug 13 13:14:17 2018
  */
-/* Compiler settings for TestActicveXCtrl.idl:
-    Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
+/* Compiler settings for .\TestActicveXCtrl.idl:
+    Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
     protocol : dce , ms_ext, c_ext, robust
-    error checks: allocation ref bounds_check enum stub_data 
+    error checks: stub_data 
     VC __declspec() decoration level: 
          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
          DECLSPEC_UUID(), MIDL_INTERFACE()
@@ -44,14 +44,12 @@
 #ifndef ___DTestActicveXCtrl_FWD_DEFINED__
 #define ___DTestActicveXCtrl_FWD_DEFINED__
 typedef interface _DTestActicveXCtrl _DTestActicveXCtrl;
-
 #endif 	/* ___DTestActicveXCtrl_FWD_DEFINED__ */
 
 
 #ifndef ___DTestActicveXCtrlEvents_FWD_DEFINED__
 #define ___DTestActicveXCtrlEvents_FWD_DEFINED__
 typedef interface _DTestActicveXCtrlEvents _DTestActicveXCtrlEvents;
-
 #endif 	/* ___DTestActicveXCtrlEvents_FWD_DEFINED__ */
 
 
@@ -71,17 +69,6 @@ typedef struct TestActicveXCtrl TestActicveXCtrl;
 extern "C"{
 #endif 
 
-
-/* interface __MIDL_itf_TestActicveXCtrl_0000_0000 */
-/* [local] */ 
-
-#pragma once
-#pragma region Desktop Family
-#pragma endregion
-
-
-extern RPC_IF_HANDLE __MIDL_itf_TestActicveXCtrl_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_TestActicveXCtrl_0000_0000_v0_0_s_ifspec;
 
 
 #ifndef __TestActicveXCtrlLib_LIBRARY_DEFINED__
@@ -119,7 +106,7 @@ EXTERN_C const IID DIID__DTestActicveXCtrl;
             _DTestActicveXCtrl * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
+            __RPC__deref_out  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             _DTestActicveXCtrl * This);
@@ -147,22 +134,14 @@ EXTERN_C const IID DIID__DTestActicveXCtrl;
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             _DTestActicveXCtrl * This,
-            /* [annotation][in] */ 
-            _In_  DISPID dispIdMember,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][in] */ 
-            _In_  LCID lcid,
-            /* [annotation][in] */ 
-            _In_  WORD wFlags,
-            /* [annotation][out][in] */ 
-            _In_  DISPPARAMS *pDispParams,
-            /* [annotation][out] */ 
-            _Out_opt_  VARIANT *pVarResult,
-            /* [annotation][out] */ 
-            _Out_opt_  EXCEPINFO *pExcepInfo,
-            /* [annotation][out] */ 
-            _Out_opt_  UINT *puArgErr);
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
         
         END_INTERFACE
     } _DTestActicveXCtrlVtbl;
@@ -234,7 +213,7 @@ EXTERN_C const IID DIID__DTestActicveXCtrlEvents;
             _DTestActicveXCtrlEvents * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
+            __RPC__deref_out  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             _DTestActicveXCtrlEvents * This);
@@ -262,22 +241,14 @@ EXTERN_C const IID DIID__DTestActicveXCtrlEvents;
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             _DTestActicveXCtrlEvents * This,
-            /* [annotation][in] */ 
-            _In_  DISPID dispIdMember,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][in] */ 
-            _In_  LCID lcid,
-            /* [annotation][in] */ 
-            _In_  WORD wFlags,
-            /* [annotation][out][in] */ 
-            _In_  DISPPARAMS *pDispParams,
-            /* [annotation][out] */ 
-            _Out_opt_  VARIANT *pVarResult,
-            /* [annotation][out] */ 
-            _Out_opt_  EXCEPINFO *pExcepInfo,
-            /* [annotation][out] */ 
-            _Out_opt_  UINT *puArgErr);
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
         
         END_INTERFACE
     } _DTestActicveXCtrlEventsVtbl;
