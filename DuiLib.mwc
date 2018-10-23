@@ -4,4 +4,5 @@ workspace(DuiLib){
 	./Demos/DuilibEmbedMFC
 	./Demos/TestActicveXCtrl
 	./Demos/DuiLibControl
+	./Demos/FaceDetect
 }

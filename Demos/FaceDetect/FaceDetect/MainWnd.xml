@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="1238,665" sizebox="4,4,4,4">
+    <Font id="1" name="微软雅黑" size="16" bold="true" italic="false" />
+    <Font id="2" name="微软雅黑" size="13" bold="true" italic="false" />
+    <HorizontalLayout >
+        <VerticalLayout bkcolor="#FFEDF1F2">
+            <HorizontalLayout height="40" bkcolor="#FFF7F8F8" minwidth="232">
+                <Text text="足迹信息采集" float="true" pos="18,15,0,0" width="178" height="19" textpadding="2,0,2,0" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="1" align="wrap" />
+            </HorizontalLayout>
+            <HorizontalLayout height="16" bkcolor="#FFFFFFFF" minwidth="232"/>
+            <HorizontalLayout name="imageFresh"  minwidth="232">
+                <VerticalLayout  bkcolor="#FFFFFFFF" width="16" minheight="200" />
+                <VerticalLayout name="showPos"  minwidth="200" minheight="200">
+                    <Button name="btnCapture" text="  点击采集" float="true" pos="350,446,0,0" bkcolor="#00B9D1EF" bkcolor2="#00757676" maxheight="20" maxwidth="27" textcolor="#FFFFFFFF" disabledtextcolor="#FFA7A6AA" font="1" align="center" normalimage="file=&apos;拍照按钮.png&apos; source=&apos;0,0,192,48&apos;" hotimage="file=&apos;拍照按钮.png&apos; source=&apos;0,48,192,96&apos;" pushedimage="file=&apos;拍照按钮.png&apos; source=&apos;0,96,192,144&apos;" disabledimage="file=&apos;拍照按钮.png&apos; source=&apos;0,144,192,192&apos;" />
+                </VerticalLayout>
+                <VerticalLayout bkcolor="#FFFFFFFF" width="16" minheight="200" />
+            </HorizontalLayout>
+            <HorizontalLayout bkcolor="#FFFFFFFF" height="16" minwidth="232" />
+        </VerticalLayout>
+    </HorizontalLayout>
+</Window>

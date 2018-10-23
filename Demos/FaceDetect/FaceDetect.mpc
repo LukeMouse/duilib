@@ -1,0 +1,3 @@
+project(MTCNNFaceDetect):build_files,winapp,lukeexe,lukecvimageus,lukestatic,DuilibDepends,lukepch,lukemfcs,lukedsagentus{
+    exename=MTCNNFaceDetect
+}
