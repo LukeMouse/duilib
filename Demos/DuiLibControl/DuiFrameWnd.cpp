@@ -56,6 +56,14 @@ void CDuiFrameWnd::setShoeImageBase64(std::string strFootImage)
 
 void CDuiFrameWnd::Notify(DuiLib::TNotifyUI& msg)
 {
+    if (msg.sType == _T("dbclick"))
+    {
+        // 此处会传递很多次双击消息，所以只获取父类控件的消息
+        if (!msg.pSender->GetParent())
+        {
+            Close(IDOK);
+        }
+    }
     static int item = 1;
     if (msg.sType == _T("click"))
     {

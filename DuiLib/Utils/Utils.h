@@ -151,6 +151,7 @@ namespace DuiLib
 	public:
 		CDuiPtrArray(int iPreallocSize = 0);
 		CDuiPtrArray(const CDuiPtrArray& src);
+
 		~CDuiPtrArray();
 
 		void Empty();

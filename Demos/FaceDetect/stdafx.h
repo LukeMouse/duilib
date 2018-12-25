@@ -19,6 +19,7 @@
 
 #include <map>
 #include <UIlib.h>
+#include <process.h>
 
 #include <DShowUtilAgentExp.h>
 #include "LukeImageRender.h"

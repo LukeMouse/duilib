@@ -844,11 +844,13 @@ void CControlUI::DoEvent(TEventUI& event)
         Invalidate();
         return;
     }
+
     if( event.Type == UIEVENT_TIMER )
     {
         m_pManager->SendNotify(this, DUI_MSGTYPE_TIMER, event.wParam, event.lParam);
         return;
     }
+
     if( event.Type == UIEVENT_CONTEXTMENU )
     {
         if( IsContextMenuUsed() ) {
@@ -856,12 +858,12 @@ void CControlUI::DoEvent(TEventUI& event)
             return;
         }
     }
-	// 增加双击支持
-	if( event.Type == UIEVENT_DBLCLICK )
-	{
-		m_pManager->SendNotify(this, DUI_MSGTYPE_DBCLICK, event.wParam, event.lParam);
-		// return;
-	}
+    // 增加双击支持
+    if (event.Type == UIEVENT_DBLCLICK)
+    {
+        m_pManager->SendNotify(this, DUI_MSGTYPE_DBCLICK, event.wParam, event.lParam);
+        // return;
+    }
     if( m_pParent != NULL ) m_pParent->DoEvent(event);
 }
 
