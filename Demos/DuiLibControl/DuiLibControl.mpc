@@ -1,3 +1,8 @@
 project(DuiLibControl):build_files,winapp,lukeexe,lukecvimageus,lukestatic,DuilibDepends,lukepch{
     exename=DuiLibControl
+    libs+=LIBCMT uafxcw
+    specific(prop:microsoft){
+        Debug::ignore_default_library_names=LIBCMTD.lib uafxcwd.lib
+        Release::ignore_default_library_names=LIBCMT.lib uafxcw.lib 
+    }
 }

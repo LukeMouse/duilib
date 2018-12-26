@@ -1,16 +1,7 @@
-project(DuiLibus):build_files,lukestatic,lukepch{
+project(DuiLibus):build_files,lukestatic,lukepch,DuilibOut{
     sharedname=DuiLibus
     dynamicflags=UILIB_EXPORTS
     includes+=../include
-    specific(prop:microsoft){
-        DisableSpecificWarnings+=4245;4100;4244;4189;4706;4482;4456;4302;4458
-        unicode=1
-        libout=..\Unicode\$(PlatformName)\lib
-        dllout=..\Unicode\$(PlatformName)\bin
-        libpaths+=..\Unicode\$(PlatformName)\lib
-        Win32::warning_level=4
-        x64::warning_level=2
-    }
 
     Header_Files{
         *.h

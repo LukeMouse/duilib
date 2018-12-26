@@ -24,11 +24,11 @@ ECHO %~dp0..\..\LukeLibRC\duilib\%VER%
 REM DEL /F /S /Q %~dp0..\..\LukeLibRC\duilib\%VER%\*
 RD /S /Q %~dp0..\..\LukeLibRC\duilib\%VER%
 MD %~dp0..\..\LukeLibRC\duilib\%VER%
-XCOPY Unicode %~dp0..\..\LukeLibRC\duilib\%VER%\ /S
+XCOPY %VER% %~dp0..\..\LukeLibRC\duilib\%VER%\ /S
 
 RD /S /Q %~dp0..\..\LukeLibRC\duilib\include
 MD %~dp0..\..\LukeLibRC\duilib\include
 XCOPY include %~dp0..\..\LukeLibRC\duilib\include\ /S
 
-RD /S /Q Unicode
+RD /S /Q %VER%
 PAUSE

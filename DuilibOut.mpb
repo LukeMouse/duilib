@@ -1,0 +1,17 @@
+project{
+    specific(prop:microsoft){
+        DisableSpecificWarnings+=4245;4100;4244;4189;4706;4482;4456;4302;4458
+        unicode=1
+        warning_level=4
+    }
+	specific(vc9){
+        libout=..\2008\$(PlatformName)\lib
+		libpaths+=..\2008\$(PlatformName)\lib
+        dllout=..\2008\$(PlatformName)\bin
+    }
+	specific(vc14){
+        libout=..\2015\$(PlatformName)\lib
+		libpaths+=..\2015\$(PlatformName)\lib
+        dllout=..\2015\$(PlatformName)\bin
+    }
+}
