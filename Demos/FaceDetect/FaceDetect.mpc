@@ -1,3 +1,5 @@
-project(MTCNNFaceDetect):build_files,winapp,lukeexe,lukecvimageus,lukestatic,DuilibDepends,lukepch,lukemfcs,lukedsagentus{
+project(MTCNNFaceDetect):build_files,winapp,lukeexe,lukeexeout,lukecvimageus,lukestatic,DuilibDepends,lukepch,lukemfcs,lukedsagentus{
     exename=MTCNNFaceDetect
+    includes+=mtcnn
+    libs+=ncnn
 }

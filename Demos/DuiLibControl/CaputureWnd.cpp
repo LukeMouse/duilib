@@ -22,6 +22,7 @@ void CCaputureWnd::OnFinalMessage(HWND /*hWnd*/)
 void CCaputureWnd::Init()
 {
     m_pButton = static_cast<DuiLib::CButtonUI*>(m_pm.FindControl(_T("btnOK")));
+#if 0
     m_pActiveX = static_cast<DuiLib::CActiveXUI *>(m_pm.FindControl(_T("ocxShoe")));
     if (m_pActiveX)
     {
@@ -34,6 +35,7 @@ void CCaputureWnd::Init()
         
         m_pActiveX->SetVisible(true);
     }
+#endif
 }
 
 void CCaputureWnd::Notify(DuiLib::TNotifyUI& msg)
@@ -43,10 +45,14 @@ void CCaputureWnd::Notify(DuiLib::TNotifyUI& msg)
     {
         if (name.CompareNoCase(_T("btnSnap")) == 0)
         {
+#if 0
             m_hrCaptureCtrl->SetFootDirect(m_foorDirect);
             //m_hrCaptureCtrl->PickFootImage();
             std::string tmpImg = m_hrCaptureCtrl->GetFootImage();
             m_pParent->SetTmpShoeImage(tmpImg);
+#else
+            Close(IDOK);
+#endif
         }
         if (name.CompareNoCase(_T("btnClose")) == 0 || name.CompareNoCase(_T("btnOK")) == 0)
         {

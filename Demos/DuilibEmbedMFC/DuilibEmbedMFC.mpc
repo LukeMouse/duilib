@@ -1,4 +1,4 @@
-project(DuilibEmbedMFC) : lukemfcs,build_files,DuilibDepends,lukeexe,lukeduilibus,lukestatic,lukepch{
+project(DuilibEmbedMFC) : lukemfcs,build_files,DuilibDepends,lukeexe,lukeexeout,lukeduilibus,lukestatic,lukepch{
     exename=DuilibEmbedMFC
 }
 

@@ -1,7 +1,8 @@
 #include "stdafx.h"
 #include <string>
 #include <vector>
-#include <unistd.h>
+#include <direct.h>
+//#include <unistd.h>
 // ncnn
 #include "net.h"
 

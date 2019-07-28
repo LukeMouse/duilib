@@ -1,4 +1,4 @@
-project(DuiLibControl):build_files,winapp,lukeexe,lukecvimageus,lukestatic,DuilibDepends,lukepch{
+project(DuiLibControl):build_files,winapp,lukeexe,lukeexeout,lukecvimageus,lukestatic,DuilibDepends,lukepch{
     exename=DuiLibControl
     libs+=LIBCMT uafxcw
     specific(prop:microsoft){

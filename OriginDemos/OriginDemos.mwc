@@ -1,3 +1,5 @@
 workspace(OriginDemos.mwc){
     ./360SafeDemo
+//	./FileTree
+	./QQDemo
 }

@@ -623,7 +623,7 @@ HRESULT CWebBrowserUI::SetProperty( IDispatch *pObj, LPOLESTR pName, VARIANT *pV
 IDispatch* CWebBrowserUI::GetHtmlWindow()
 {
 	IDispatch* pDp =  NULL;
-	HRESULT hr;
+	HRESULT hr = S_OK;
 	if (m_pWebBrowser2)
 		hr=m_pWebBrowser2->get_Document(&pDp);
 

@@ -1,8 +1,8 @@
-project(TestActicveXCtrl):build_files,lukemfc,lukecvimageu,lukepch{
+project(TestActicveXCtrl):build_files,lukemfc,lukecvimageu,lukedllout,lukepch{
     sharedname=TestActicveXCtrl
     macros += _CRT_SECURE_NO_WARNINGS
     includes += ..\..\include
-    after+=DuiLibUs
+    after+=DuiLibus
     libs+=DuiLibus
     specific(prop:microsoft){
         DisableSpecificWarnings+=4481;4100;4458;2065;2227
@@ -10,9 +10,6 @@ project(TestActicveXCtrl):build_files,lukemfc,lukecvimageu,lukepch{
         activex=1
         unicode=1
         RegisterOutput=1
-        libout=..\..\Unicode\$(PlatformName)\lib
-        dllout=..\..\Unicode\$(PlatformName)\bin
-        libpaths+=..\..\Unicode\$(PlatformName)\lib
         warning_level=4
     }
     //D:\LukeGitHub\duilib\Unicode\Win32\bin\TstCon32.exe
