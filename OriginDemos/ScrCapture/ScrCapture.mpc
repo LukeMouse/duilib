@@ -1,4 +1,4 @@
-project(ScrCapture):build_files,lukestatic,OriginDemo,lukepch,lukeexe,winapp{
+project(ScrCapture):build_files,lukestatic,OriginDemo,lukepch,lukeexe,lukeexeout,winapp{
 	exename=ScrCapture
 }
 

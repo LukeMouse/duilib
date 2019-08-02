@@ -1,5 +1,13 @@
-workspace(OriginDemos.mwc){
+workspace(OriginDemos){
     ./360SafeDemo
-//	./FileTree
+	./FileTree
 	./QQDemo
+	./FlashDemo
+	./GameDemo
+	./ListDemo
+	./MenuDemo
+	./RichListDemo
+	./ScrCapture
+	./TestApp1
+	./Tutorial
 }

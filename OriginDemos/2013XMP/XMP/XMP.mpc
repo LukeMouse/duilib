@@ -1,0 +1,11 @@
+project(XMP) : build_files,winapp,lukeexe,lukeexeout,lukestatic{
+    exename=XMP
+    after+=DuiLibus
+    libs+=DuiLibus
+    includes+=../_include
+    specific(prop:microsoft){
+        unicode=1
+    }
+}
+
+ 

@@ -17,7 +17,7 @@
 //
 
 #include "stdafx.h"
-#include "..\DuiLib\Utils\WinImplBase.h"
+#include <Utils\WinImplBase.h>
 #include "main_frame.hpp"
 
 #include <atlbase.h>

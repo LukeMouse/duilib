@@ -1,0 +1,4 @@
+workspace(DuiLib){
+	./DuiLib
+	./XMP
+}

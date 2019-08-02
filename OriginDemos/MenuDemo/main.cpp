@@ -17,7 +17,7 @@
 //
 
 #include "stdafx.h"
-#include "..\DuiLib\Utils\WinImplBase.h"
+#include <Utils\WinImplBase.h>
 #include "main_frame.hpp"
 
 #if defined(WIN32) && !defined(UNDER_CE)
@@ -34,6 +34,8 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPTSTR lp
 	HRESULT Hr = ::CoInitializeEx(NULL, COINIT_MULTITHREADED);
 #endif
 	if( FAILED(Hr) ) return 0;
+
+    CPaintManagerUI::SetResourcePath(CPaintManagerUI::GetInstancePath() + _T("skin/MenuRes"));
 
 	MainFrame* pFrame = new MainFrame();
 	if( pFrame == NULL ) return 0;

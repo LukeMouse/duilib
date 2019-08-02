@@ -1,6 +1,6 @@
 #ifndef COLORPICKER_HPP
 #define COLORPICKER_HPP
-#include "..\DuiLib\Utils\WinImplBase.h"
+#include <Utils\WinImplBase.h>
 
 class ChatDialog;
 class CColorPicker : public WindowImplBase

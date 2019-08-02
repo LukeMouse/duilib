@@ -1,0 +1,4 @@
+project(Tutorial):build_files,lukestatic,OriginDemo,lukeexe,lukeexeout,winapp{
+	exename=Tutorial
+}
+

@@ -1,4 +1,4 @@
-project(FlashDemo):build_files,lukestatic,OriginDemo,lukepch,lukeexe,winapp{
+project(FlashDemo):build_files,lukestatic,OriginDemo,lukepch,lukeexe,lukeexeout,winapp{
 	exename=FlashDemo
 }
 

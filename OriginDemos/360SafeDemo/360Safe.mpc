@@ -1,4 +1,4 @@
-project(360Safe):build_files,lukestatic,OriginDemo,lukepch,lukeexe,winapp{
+project(360Safe):build_files,lukestatic,OriginDemo,lukepch,lukeexe,lukeexeout,winapp{
 	exename=360Safe
 }
 

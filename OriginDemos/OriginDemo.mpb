@@ -1,19 +1,7 @@
-project{
-	includes+=../../include
-	libs+=DuiLibus
+project:lukeduilibus{
     specific(prop:microsoft){
         DisableSpecificWarnings+=4481;4100;4458;4702
         unicode=1
         warning_level=4
-    }
-	specific(vc9){
-        libout=..\..\2008\$(PlatformName)\lib
-		libpaths+=..\..\2008\$(PlatformName)\lib
-        exeout=..\..\2008\$(PlatformName)\bin
-    }
-	specific(vc14){
-        libout=..\..\2015\$(PlatformName)\lib
-		libpaths+=..\..\2015\$(PlatformName)\lib
-        exeout=..\..\2015\$(PlatformName)\bin
     }
 }

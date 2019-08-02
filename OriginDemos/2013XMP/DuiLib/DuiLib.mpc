@@ -1,0 +1,30 @@
+project(DuiLibus):build_files,lukestatic,lukepch,lukedllout{
+    sharedname=DuiLibus
+    dynamicflags=UILIB_EXPORTS
+    includes+=../include  ./
+
+    specific(prop:microsoft){
+        DisableSpecificWarnings+=4245;4100;4244;4189;4706;4482;4456;4302;4458
+        unicode=1
+        warning_level=4
+    }
+
+    Header_Files{
+        *.h
+        Control\*.h
+        Core\*.h
+        Layout\*.h
+        Utils\*.h
+    }
+
+    Source_Files{
+        *.cpp
+        Control\*.cpp
+        Core\*.cpp
+        Layout\*.cpp
+        Utils\*.cpp
+        no_pch=1
+        Utils\XUnzip.cpp
+        Utils\*.c
+    }
+}

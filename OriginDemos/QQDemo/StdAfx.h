@@ -37,7 +37,7 @@
 #include <shlwapi.h>
 #include <list>
 
-#include "..\DuiLib\UIlib.h"
+#include <UIlib.h>
 
 #ifndef NO_USING_DUILIB_NAMESPACE
 	using namespace DuiLib;

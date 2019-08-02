@@ -9,7 +9,7 @@
 #include <vector>
 #include <sstream>
 
-#include "..\DuiLib\UIlib.h"
+#include <UIlib.h>
 
 using namespace DuiLib;
 

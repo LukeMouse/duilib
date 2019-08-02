@@ -1,4 +1,4 @@
-project(MenuDemo):build_files,OriginDemo,lukeexe,winapp{
+project(MenuDemo):build_files,OriginDemo,lukeexe,lukeexeout,lukepch,winapp{
     exename=MenuDemo
     Source_Files{
         debug.cpp

@@ -5,4 +5,5 @@ workspace(DuiLib){
 	./Demos/TestActicveXCtrl
 	./Demos/DuiLibControl
     ./Demos/FaceDetect
+	./Demos/LukeUsbCamera
 }

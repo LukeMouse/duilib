@@ -1,4 +1,4 @@
-project(FileTree):build_files,lukestatic,OriginDemo,lukepch,lukeexe,winapp{
+project(FileTree):build_files,lukestatic,OriginDemo,lukepch,lukeexe,lukeexeout,winapp{
 	exename=FileTree
 }
 

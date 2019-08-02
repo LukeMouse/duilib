@@ -1,6 +1,6 @@
-project(QQDemo):build_files,OriginDemo,lukeexe,winapp{
-	exename=QQDemo
-	Source_Files{
+project(QQDemo):build_files,OriginDemo,lukeexe,lukeexeout,winapp{
+    exename=QQDemo
+    Source_Files{
         ./*.cpp
         ../../DuiLib/Utils/XUnzip.cpp
     }

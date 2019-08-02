@@ -1,6 +1,7 @@
 project{
 	includes+=../../include
 	libs+=DuiLibus
+	after+=DuiLibus
     specific(prop:microsoft){
         DisableSpecificWarnings+=4481;4100;4458;4702
         unicode=1

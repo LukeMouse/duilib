@@ -1,0 +1,4 @@
+project(LukeUsbCamera):build_files,lukestatic,DuilibDepends,lukepch,lukeexe,lukeexeout,winapp{
+	exename=LukeUsbCamera
+}
+
